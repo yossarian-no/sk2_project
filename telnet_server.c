@@ -16,7 +16,6 @@ void *execute_command(void *client_socket_ptr) {
         memset(buffer, 0, BUFFER_SIZE);
         recv(client_socket, buffer, BUFFER_SIZE, 0);
 
-        // Удаление символов \r и \n
         char *newline = strchr(buffer, '\n');
         if (newline) *newline = '\0';
         char *carriage_return = strchr(buffer, '\r');
